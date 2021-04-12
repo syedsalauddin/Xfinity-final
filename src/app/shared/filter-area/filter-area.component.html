@@ -1,0 +1,15 @@
+<div class="filter-area">
+  <div class="brand-area">
+    <p class="">Choose Options:</p>
+    <div *ngFor="let element of data.elements" style="display: inline-flex">
+      <button
+        type="button"
+        class="brand-option"
+        (click)="loadSelectedOption(element.id)"
+      >
+        {{ element.name }}
+      </button>
+    </div>
+  </div>
+  
+</div>

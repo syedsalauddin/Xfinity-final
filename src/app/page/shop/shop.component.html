@@ -1,0 +1,21 @@
+<br/><br/>
+<div class="row container-fluid">
+  <app-filter-area
+    [data]="brands"
+    (optionSelected)="loadOptionSelected($event)"
+  ></app-filter-area>
+</div>
+
+<hr />
+<br />
+<div *ngIf="isLoading">Please wait...Loading items....</div>
+<div *ngIf="!isLoading">
+  <p class="text-center">Free Shipping in all orders</p>
+  <br /><br />
+  <div class="row products">
+    <app-product
+      *ngFor="let product of products"
+      [product]="product"
+    ></app-product>
+  </div>
+</div>

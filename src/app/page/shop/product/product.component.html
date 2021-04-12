@@ -1,0 +1,29 @@
+<section class="product text-center" style="width: 20rem;">
+  <a (click)="fetchProductDetails()">
+    <div class="card" >
+      <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted"></h6>
+        <div class="picture" >
+
+          <img
+            [src]="product['image']['url']"
+            alt=""
+            srcset=""
+            class="img-fluid product-image"
+          />
+        </div>
+        <div class="display">
+          <div class="brand">{{ product.brand }}</div>
+          <div class="name">{{ product.name }}</div>
+          <div class="price">
+            <span>Starting at {{startingAmount|currency}}</span><span *ngIf="reccuring">/mo</span><br/>
+               <span *ngIf="reccuring" class="emi-price">For {{term}} months, 0% APR <br/></span>
+               <span  class="emi-price">Full Price:{{fullPrice|currency}}</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </a>
+</section>
